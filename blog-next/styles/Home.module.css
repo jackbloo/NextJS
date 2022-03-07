@@ -40,9 +40,9 @@
 }
 
 .title {
-  margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  margin-bottom: 5;
 }
 
 .title,
@@ -70,7 +70,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 900px;
 }
 
 .card {
@@ -82,7 +82,7 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+  max-width: 400px;
 }
 
 .card:hover,
@@ -93,7 +93,7 @@
 }
 
 .card h2 {
-  margin: 0 0 1rem 0;
+  margin-top: 10px;
   font-size: 1.5rem;
 }
 
@@ -104,8 +104,19 @@
 }
 
 .logo {
-  height: 1em;
   margin-left: 0.5rem;
+}
+
+.picture {
+  margin-bottom: 20px;
+}
+
+.text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 600px) {
