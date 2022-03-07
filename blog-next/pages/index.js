@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -12,6 +13,19 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+      <div className={styles.navbar}>
+        <div className={styles.rightNavbar}>
+          Digitsense Blog
+        </div>
+        <div className={styles.leftNavbar}>
+        <div className={styles.nav} style={{fontWeight: 'bold', textDecoration:'underline'}}>
+              <Link href="/"><a>Home</a></Link>
+            </div>
+            <div className={styles.nav}>
+              <Link href="/about"><a>About</a></Link>
+            </div>
+        </div>
+      </div>
         <h1 className={styles.title}>
           Welcome to DigitSense Next Blog
         </h1>
