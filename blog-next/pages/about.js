@@ -1,9 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Link from 'next/link';
+import dynamic from 'next/dynamic'
 
-export default function Home() {
+const Navbar = dynamic(() =>import('../components/Navbar'))
+const Footer = dynamic(() => import('../components/Footer'))
+const Profile = dynamic(() => import('../components/Profile'))
+
+
+export default function AboutUs() {
+    const data = [{name:"Harry Maguire", role:"Chief Executive Officer (CEO)", content:" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.", image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"}, {name:"Jadon Sancho", role:"Chief Technology Officer (CTO)", content:" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.", image:"https://images.unsplash.com/flagged/photo-1553642618-de0381320ff3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"}]
   return (
     <div className={styles.container}>
       <Head>
@@ -13,66 +19,15 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-      <div className={styles.navbar}>
-        <div className={styles.rightNavbar}>
-          Digitsense Blog
-        </div>
-        <div className={styles.leftNavbar}>
-        <div className={styles.nav}>
-              <Link href="/"><a>Home</a></Link>
-            </div>
-            <div className={styles.nav} style={{fontWeight: 'bold',textDecoration:'underline'}}>
-              <Link href="/about"><a>About</a></Link>
-            </div>
-        </div>
-      </div>
+        <Navbar title="about"/>
         <h1 className={styles.title}>
           About this blog
         </h1>
         <div className={styles.profileContainer}>
-        <div className={styles.profile}>
-        <div className={styles.profilePicture}>
-          <Image src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Minimalist" width={250} height={300} objectFit="cover" layout='fixed'/>
-        </div>
-            <h1>
-                Harry Maguire
-            </h1>
-            <p>
-                Chief Executive Officer (CEO)
-            </p>
-            <p className={styles.text}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.
-            </p>
-        </div>
-        <div className={styles.profile}>
-        <div className={styles.profilePicture}>
-          <Image src="https://images.unsplash.com/flagged/photo-1553642618-de0381320ff3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Minimalist" width={250} height={300} objectFit="cover" layout='fixed'/>
-        </div>
-            <h1>
-                Jadon Sancho
-            </h1>
-            <p>
-                Chief Technology Officer (CTO)
-            </p>
-            <p className={styles.text}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.
-            </p>
-        </div>
+            {data.map((el,id) => <Profile data={el} key={`${el.name} - ${id}`}/>)}
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/digitsense.jpeg" alt="Vercel Logo" width={72} height={40} />
-          </span>
-        </a>
-      </footer>
+    <Footer/>
     </div>
   )
 }
