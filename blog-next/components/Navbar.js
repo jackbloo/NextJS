@@ -17,7 +17,7 @@ export default function Navbar({title}){
     return(
         <div className={styles.navbar}>
         <div className={styles.rightNavbar}>
-          Digitsense Blog
+        <Link href="/"><a>Digitsense Blog</a></Link>
         </div>
         <div className={styles.leftNavbar}>
             {data.map((el,i) => <Nav data={title === el.id} title={el.title} id={el.id} key={`${el.id} - ${i}`}/>)}
