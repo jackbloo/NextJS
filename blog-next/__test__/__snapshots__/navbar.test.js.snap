@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit Testing of Navbar Should renders navbar container 1`] = `
+<div
+  class="navbar"
+  data-testid="navbar-container"
+>
+  <div
+    class="rightNavbar"
+  >
+    <a
+      href="/"
+    >
+      Digitsense Blog
+    </a>
+  </div>
+  <div
+    class="leftNavbar"
+  >
+    <div
+      class="nav"
+      style="font-weight: normal; text-decoration: none;"
+    >
+      <a
+        href="/"
+      >
+        Home
+      </a>
+    </div>
+    <div
+      class="nav"
+      style="font-weight: bold; text-decoration: underline;"
+    >
+      <a
+        href="/about"
+      >
+        About us
+      </a>
+    </div>
+    <div
+      class="nav"
+      style="font-weight: normal; text-decoration: none;"
+    >
+      <a
+        href="/undefined"
+      />
+    </div>
+  </div>
+</div>
+`;

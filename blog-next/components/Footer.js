@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function Footer(){
     return(
-        <footer className={styles.footer}>
+        <footer className={styles.footer} data-testid="footer-container">
         <a
           href="https://digit-sense.com/"
           target="_blank"

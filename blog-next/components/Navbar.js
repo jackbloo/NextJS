@@ -15,7 +15,7 @@ return(
 export default function Navbar({title}){
     const data = [{id:'', title:'Home'},{id:'about', title:'About us'}]
     return(
-        <div className={styles.navbar}>
+        <div className={styles.navbar} data-testid="navbar-container">
         <div className={styles.rightNavbar}>
         <Link href="/"><a>Digitsense Blog</a></Link>
         </div>
